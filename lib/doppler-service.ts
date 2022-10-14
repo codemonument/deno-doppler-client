@@ -35,4 +35,10 @@ export class DopplerService {
   async getConfigs(project: string) {
     return this.http.get(`configs`, { searchParams: { project } }).json();
   }
+
+  async getSecrets(project: string, config: string) {
+    return this.http.get(`configs/config/secrets`, {
+      searchParams: { project, config },
+    }).json();
+  }
 }

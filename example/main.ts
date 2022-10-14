@@ -10,6 +10,9 @@ try {
 
   const configs = await doppler.getConfigs("deno-doppler-client");
   console.log(configs);
+
+  const secrets = await doppler.getSecrets("deno-doppler-client", "dev");
+  console.log(secrets);
 } catch (error) {
   console.error(error);
   Deno.exit();
