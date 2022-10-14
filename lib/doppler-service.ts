@@ -1,13 +1,12 @@
 // deno-lint-ignore-file require-await
+// import retrofit from "ts-retrofit";
 import {
   BasePath,
   BaseService,
-  Config,
   GET,
-  POST,
   Response,
   ServiceBuilder,
-} from "ts-retrofit";
+} from "npm:ts-retrofit@1.18.0";
 import { Project } from "./types/project.ts";
 
 export type DopplerServiceOptions = {
@@ -34,7 +33,7 @@ export class DopplerService extends BaseService {
       .setRequestInterceptors((config) => {
         config.auth = {
           username: token,
-          password: "",
+          password: "dummy",
         };
         return config;
       })
