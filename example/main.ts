@@ -6,7 +6,7 @@ import { VERSION } from "@/version.ts";
 try {
   log.info(`Module Version (version.ts): ${VERSION}`);
 
-  const doppler = DopplerService.create({ token: DOPPLER_TOKEN });
+  const doppler = new DopplerService({ token: DOPPLER_TOKEN });
 
   const res = await doppler.getProjects();
   console.log(res);
