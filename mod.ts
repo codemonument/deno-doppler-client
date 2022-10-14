@@ -3,4 +3,4 @@
  * which should be used by other people
  */
 
-
+export * from "./lib/doppler-service.ts";
