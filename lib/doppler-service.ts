@@ -4,10 +4,12 @@ import {
   BasePath,
   BaseService,
   GET,
+  Query,
   Response,
   ServiceBuilder,
 } from "npm:ts-retrofit@1.18.0";
-import { Project } from "./types/project.ts";
+import { Project } from "./types/Project.ts";
+import { Environment } from "./types/Environment.ts";
 
 export type DopplerServiceOptions = {
   token: string;
@@ -22,6 +24,13 @@ export class DopplerService extends BaseService {
     return <Response<Project[]>> {};
   }
 
+  @GET("/environments")
+  async getEnvironments(
+    @Query("project") project: string,
+  ): Promise<Response<Environment[]>> {
+    return <Response<Environment[]>> {};
+  }
+
   /**
    * @param token The token used for authenticating against doppler => https://docs.doppler.com/reference/auth-token-formats
    * @returns DopplerService
@@ -33,7 +42,7 @@ export class DopplerService extends BaseService {
       .setRequestInterceptors((config) => {
         config.auth = {
           username: token,
-          password: "dummy",
+          password: "",
         };
         return config;
       })
