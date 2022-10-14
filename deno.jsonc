@@ -19,6 +19,6 @@
      * Docs for Deno Tasks: https://deno.land/manual@v1.20.1/tools/task_runner
      */
     "tasks": {
-        "start": "deno run --unstable example/main.ts"
+        "start": "deno run --unstable --allow-env=https_proxy,HTTPS_PROXY --allow-read example/main.ts"
     }
 }
