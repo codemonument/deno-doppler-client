@@ -1,13 +1,13 @@
 export const snapshot = {};
 
-snapshot[`DopplerService > read configs (per environment) 1`] = `
+snapshot[`DopplerService > reads configs (per environment) 1`] = `
 {
   configs: [
     {
       created_at: "2022-10-14T21:33:16.593Z",
       environment: "dev",
       initial_fetch_at: "2022-10-14T23:24:47.458Z",
-      last_fetch_at: "2022-10-14T23:34:49.028Z",
+      last_fetch_at: "2022-10-14T23:55:48.958Z",
       locked: true,
       name: "dev",
       project: "deno-doppler-client",
@@ -20,7 +20,7 @@ snapshot[`DopplerService > read configs (per environment) 1`] = `
 }
 `;
 
-snapshot[`DopplerService > read secrets from one config 1`] = `
+snapshot[`DopplerService > reads secrets from one config 1`] = `
 {
   secrets: {
     DEMO_SECRET: {
@@ -41,5 +41,16 @@ snapshot[`DopplerService > read secrets from one config 1`] = `
     },
   },
   success: true,
+}
+`;
+
+snapshot[`DopplerService > reads one secret from one config 1`] = `
+{
+  name: "DEMO_SECRET",
+  success: true,
+  value: {
+    computed: "This is a demo secret! :)",
+    raw: "This is a demo secret! :)",
+  },
 }
 `;
