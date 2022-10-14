@@ -8,8 +8,8 @@ try {
 
   const doppler = new DopplerService({ token: DOPPLER_TOKEN });
 
-  const res = await doppler.getEnvironments("deno-doppler-client");
-  console.log(res);
+  const configs = await doppler.getConfigs("deno-doppler-client");
+  console.log(configs);
 } catch (error) {
   console.error(error);
   Deno.exit();
