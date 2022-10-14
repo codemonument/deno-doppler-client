@@ -8,7 +8,7 @@ try {
 
   const doppler = new DopplerService({ token: DOPPLER_TOKEN });
 
-  const res = await doppler.getProjects();
+  const res = await doppler.getEnvironments("deno-doppler-client");
   console.log(res);
 } catch (error) {
   console.error(error);

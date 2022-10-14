@@ -1,6 +1,6 @@
 // deno-lint-ignore-file require-await
 // import retrofit from "ts-retrofit";
-import axios from "redaxios";
+import ky from "ky";
 import { encode as encodeBase64 } from "std_base64";
 import { Project } from "./types/Project.ts";
 import { Environment } from "./types/Environment.ts";
@@ -15,18 +15,20 @@ export class DopplerService {
   private http;
 
   constructor({ token }: DopplerServiceOptions) {
-    this.http = axios.create({
-      baseURL: BASE_URL,
-      // auth: encodeBase64(`${token}:dummy_password`),
-      auth: encodeBase64(`${token}:dummy_password`),
+    this.http = ky.create({
+      prefixUrl: BASE_URL,
+      headers: {
+        "Authorization": encodeBase64(`${token}:dummy_password`),
+      },
     });
   }
 
   async getProjects() {
-    return this.http.get(`/projects`);
+    const req = this.http.get(`projects`);
+    return req;
   }
 
   async getEnvironments(project: string) {
-    return this.http.get(`/environments`, { params: { project } });
+    return this.http.get(`environments`, { searchParams: { project } });
   }
 }
