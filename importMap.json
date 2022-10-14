@@ -3,6 +3,8 @@
     "@": "./",
     "@/": "./",
     "std_log": "./deps/std_log.ts",
-    "std_testing": "./deps/std_testing.ts"
+    "std_testing": "./deps/std_testing.ts",
+    "ts-retrofit": "https://esm.sh/ts-retrofit@1.18.0",
+    "ts-retrofit/": "https://esm.sh/ts-retrofit@1.18.0/"
   }
 }
