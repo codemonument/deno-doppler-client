@@ -6,10 +6,10 @@ import { VERSION } from "@/version.ts";
 try {
   log.info(`Module Version (version.ts): ${VERSION}`);
 
-  const service = DopplerService.create({ token: DOPPLER_TOKEN });
-  const projects = await service.getProjects();
+  const doppler = DopplerService.create({ token: DOPPLER_TOKEN });
 
-  console.log(projects);
+  const res = await doppler.getProjects();
+  console.log(res);
 } catch (error) {
   console.error(error);
   Deno.exit();
