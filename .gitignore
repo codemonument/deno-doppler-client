@@ -3,3 +3,4 @@ playground/*
 dist/*
 !dist/.gitkeep
 .DS_Store
+.env
