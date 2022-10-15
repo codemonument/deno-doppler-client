@@ -23,14 +23,16 @@ export class DopplerService {
     });
   }
 
-  async getProjects() {
-    const req = this.http.get(`projects`);
-    return req;
-  }
+  // Deactivated, due to not usable with Service Token
+  // async getProjects() {
+  //   const req = this.http.get(`projects`);
+  //   return req;
+  // }
 
-  async getEnvironments(project: string) {
-    return this.http.get(`environments`, { searchParams: { project } });
-  }
+  // Deactivated, due to not usable with Service Token
+  // async getEnvironments(project: string) {
+  //   return this.http.get(`environments`, { searchParams: { project } });
+  // }
 
   async getConfigs(
     project: string,
