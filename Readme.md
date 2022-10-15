@@ -9,7 +9,7 @@ https://docs.doppler.com/docs/sdk-javascript
 
 ## Getting the secrets for a config 
 
-```
+```ts
 // Init new Doppler Service with valid token 
 // You can get a service token here: https://docs.doppler.com/docs/enclave-service-tokens
 // (These are valid for 1 Project for 1 Environment but can be valid for multipl configs)
