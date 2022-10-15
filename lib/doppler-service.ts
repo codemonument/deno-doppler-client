@@ -46,6 +46,9 @@ export class DopplerService {
     }).json();
   }
 
+  /**
+   * Simply an alias for DopplerService.retrieveSecret
+   */
   async getSecret(project: string, config: string, secret: string) {
     return this.retrieveSecret(project, config, secret);
   }
