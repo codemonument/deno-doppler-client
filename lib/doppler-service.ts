@@ -1,9 +1,9 @@
 // deno-lint-ignore-file require-await
 // import retrofit from "ts-retrofit";
-import ky, { ResponsePromise } from "ky";
+import ky from "ky";
 import { encode as encodeBase64 } from "std_base64";
-import { Project } from "./types/Project.ts";
-import { Environment } from "./types/Environment.ts";
+import { Config } from "./types/Config.ts";
+import { DopplerResponse } from "./types/DopplerResponse.ts";
 
 export type DopplerServiceOptions = {
   token: string;
@@ -32,7 +32,9 @@ export class DopplerService {
     return this.http.get(`environments`, { searchParams: { project } });
   }
 
-  async getConfigs(project: string) {
+  async getConfigs(
+    project: string,
+  ): Promise<DopplerResponse & { configs: Config[] }> {
     return this.http.get(`configs`, { searchParams: { project } }).json();
   }
 
