@@ -1,7 +1,7 @@
 // deno-lint-ignore-file require-await
 // import retrofit from "ts-retrofit";
-import ky from "ky";
-import { encode as encodeBase64 } from "std_base64";
+import ky from "../deps/ky.ts";
+import { encode as encodeBase64 } from "../deps/std_base64.ts";
 import { Config } from "./types/Config.ts";
 import { DopplerResponse } from "./types/DopplerResponse.ts";
 

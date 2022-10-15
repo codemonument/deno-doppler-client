@@ -1,4 +1,4 @@
-import { assert, assertSnapshot, describe, it } from "std_testing";
+import { assert, assertSnapshot, describe, it } from "@/deps/std_testing.ts";
 import { DopplerService } from "@/mod.ts";
 import { DOPPLER_TOKEN } from "@/env.ts";
 

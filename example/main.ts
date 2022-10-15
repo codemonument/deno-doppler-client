@@ -1,6 +1,6 @@
 import { DopplerService } from "@/mod.ts";
 import { DOPPLER_TOKEN } from "@/env.ts";
-import { log } from "std_log";
+import { log } from "@/deps/std_log.ts";
 import { VERSION } from "@/version.ts";
 
 try {

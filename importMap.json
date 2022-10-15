@@ -1,12 +1,6 @@
 {
   "imports": {
     "@": "./",
-    "@/": "./",
-    "std_log": "./deps/std_log.ts",
-    "std_testing": "./deps/std_testing.ts",
-    "std_base64": "https://deno.land/std@0.159.0/encoding/base64.ts",
-    "ts-retrofit": "https://esm.sh/ts-retrofit@1.18.0",
-    "ts-retrofit/": "https://esm.sh/ts-retrofit@1.18.0/",
-    "ky": "https://esm.sh/ky@0.31.4"
+    "@/": "./"
   }
 }
