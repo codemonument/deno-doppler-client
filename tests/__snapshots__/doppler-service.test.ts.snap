@@ -43,6 +43,19 @@ snapshot[`DopplerService > reads secrets from one config 1`] = `
 }
 `;
 
+snapshot[`DopplerService > returns a correct map from getSecretsMap 1`] = `
+Map {
+  "DEMO_SECRET" => "This is a demo secret! :)",
+  "DEMO_SECRET_RAW" => "This is a demo secret! :)",
+  "DOPPLER_CONFIG" => "dev",
+  "DOPPLER_CONFIG_RAW" => "",
+  "DOPPLER_ENVIRONMENT" => "dev",
+  "DOPPLER_ENVIRONMENT_RAW" => "",
+  "DOPPLER_PROJECT" => "deno-doppler-client",
+  "DOPPLER_PROJECT_RAW" => "",
+}
+`;
+
 snapshot[`DopplerService > reads one secret from one config 1`] = `
 {
   name: "DEMO_SECRET",

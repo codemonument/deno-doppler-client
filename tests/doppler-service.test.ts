@@ -27,6 +27,12 @@ describe(`DopplerService`, () => {
     await assertSnapshot(ctx, secrets);
   });
 
+  it(`returns a correct map from getSecretsMap`, async (ctx) => {
+    const secrets = await doppler.getSecretsMap("deno-doppler-client", "dev");
+    assert(secrets.get("DEMO_SECRET_RAW"));
+    await assertSnapshot(ctx, secrets);
+  });
+
   it(`reads one secret from one config`, async (ctx) => {
     const secret = await doppler.retrieveSecret(
       "deno-doppler-client",
