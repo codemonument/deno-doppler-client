@@ -1,4 +1,4 @@
 export type DopplerResponse = {
-  page: number;
+  page?: number;
   success: boolean;
 };
