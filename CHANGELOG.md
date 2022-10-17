@@ -3,6 +3,7 @@
 ## next 
 
 - Make page prop in DopplerResponse optional (to fit with secrets response, which seem to not have a page prop in response)
+- Create correct type for doppler secrets from api and add it to all relevant functions
 
 ## 0.1.2 - 2022-10-15 
 

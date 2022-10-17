@@ -2,6 +2,7 @@
 // import retrofit from "ts-retrofit";
 import ky from "../deps/ky.ts";
 import { encode as encodeBase64 } from "../deps/std_base64.ts";
+import { Secret } from "../mod.ts";
 import { Config } from "./types/Config.ts";
 import { DopplerResponse } from "./types/DopplerResponse.ts";
 
@@ -40,7 +41,10 @@ export class DopplerService {
     return this.http.get(`configs`, { searchParams: { project } }).json();
   }
 
-  async getSecrets(project: string, config: string) {
+  async getSecrets(
+    project: string,
+    config: string,
+  ): Promise<DopplerResponse & { secrets: Record<string, Secret> }> {
     return this.http.get(`configs/config/secrets`, {
       searchParams: { project, config },
     }).json();
@@ -49,11 +53,19 @@ export class DopplerService {
   /**
    * Simply an alias for DopplerService.retrieveSecret
    */
-  async getSecret(project: string, config: string, secret: string) {
+  async getSecret(
+    project: string,
+    config: string,
+    secret: string,
+  ): Promise<DopplerResponse & { value: Secret }> {
     return this.retrieveSecret(project, config, secret);
   }
 
-  async retrieveSecret(project: string, config: string, secret: string) {
+  async retrieveSecret(
+    project: string,
+    config: string,
+    secret: string,
+  ): Promise<DopplerResponse & { value: Secret }> {
     return this.http.get(`configs/config/secret`, {
       searchParams: { project, config, name: secret },
     }).json();
