@@ -13,6 +13,13 @@ try {
 
   const secrets = await doppler.getSecrets("deno-doppler-client", "dev");
   console.log(secrets);
+
+  const secret = await doppler.getSecret(
+    "deno-doppler-client",
+    "dev",
+    "DEMO_SECRET",
+  );
+  console.log(secret);
 } catch (error) {
   console.error(error);
   Deno.exit();
