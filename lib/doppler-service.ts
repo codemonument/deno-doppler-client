@@ -51,6 +51,29 @@ export class DopplerService {
   }
 
   /**
+   * This is a shortcut function to `getSecrets`, which converts the
+   * nested secret objects, like `DOPPLER_CONFIG: { raw: "", computed: "dev" },`
+   * into a flat Map<string, string>.
+   *
+   * Raw values will be added as "original key + '_RAW'" entries,
+   * and computed values will be added with the original key as name
+   */
+  async getSecretsMap(
+    project: string,
+    config: string,
+  ): Promise<Map<string, string>> {
+    const { secrets } = await this.getSecrets(project, config);
+    const secretsMap: Map<string, string> = new Map();
+    Object.entries(secrets).forEach(
+      ([key, val]: [string, Secret]) => {
+        secretsMap.set(`${key}`, val.computed);
+        secretsMap.set(`${key}_RAW`, val.raw);
+      },
+    );
+    return secretsMap;
+  }
+
+  /**
    * Simply an alias for DopplerService.retrieveSecret
    */
   async getSecret(
