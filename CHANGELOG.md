@@ -1,5 +1,9 @@
 # Changelog 
 
+## 0.2.1 - 2023-03-04
+
+- Update all dependencies, esp. ky to use pinned esm.sh version of v110, to not get errors with deno.lockfile when using this library
+
 ## 0.2.0 - 2022-10-17 
 
 - Make page prop in DopplerResponse optional (to fit with secrets response, which seem to not have a page prop in response)
